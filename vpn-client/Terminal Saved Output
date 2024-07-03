@@ -1,0 +1,126 @@
+Last login: Sun Jun 23 08:28:42 on ttys000
+(base) anshulasati@Anshuls-MacBook-Air ~ % cd Desktop/Mainproject/vpn-client/ 
+(base) anshulasati@Anshuls-MacBook-Air vpn-client % ls
+client3.py		requirements.txt	vpn2.py
+dockerfile		vpn-client-linux.py
+logs			vpn-client.py
+(base) anshulasati@Anshuls-MacBook-Air vpn-client % sudo python3 vpn-client.py 
+Password:
+(base) anshulasati@Anshuls-MacBook-Air vpn-client % brew install wireguard-tools
+
+==> Downloading https://formulae.brew.sh/api/formula.jws.json
+##################################################################################################################################################################################################### 100.0%
+==> Downloading https://formulae.brew.sh/api/cask.jws.json
+##################################################################################################################################################################################################### 100.0%
+Warning: wireguard-tools 1.0.20210914_1 is already installed and up-to-date.
+To reinstall 1.0.20210914_1, run:
+  brew reinstall wireguard-tools
+(base) anshulasati@Anshuls-MacBook-Air vpn-client % mkdir ~/wireguard-configs
+cd ~/wireguard-configs
+
+(base) anshulasati@Anshuls-MacBook-Air wireguard-configs % ls
+(base) anshulasati@Anshuls-MacBook-Air wireguard-configs % nano wg0-client.conf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  UW PICO 5.09                                                                               File: wg0-client.conf                                                                                Modified  
+
+[Interface]
+PrivateKey = your_private_key_here
+Address = 10.0.0.2/24
+DNS = 8.8.8.8
+
+[Peer]
+PublicKey = server_public_key_here
+Endpoint = server_ip_or_hostname:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^G Get Help                       ^O WriteOut                       ^R Read File                      ^Y Prev Pg                        ^K Cut Text                       ^C Cur Pos                        
+^X Exit                           ^J Justify                        ^W Where is                       ^V Next Pg                        ^U UnCut Text                     ^T To Spell                      
