@@ -1,0 +1,65 @@
+2024-06-23 11:30:14,096 [INFO] Starting installation of dependencies...
+2024-06-23 11:30:14,096 [INFO] Installing dependencies...
+2024-06-23 11:30:14,096 [INFO] Running command: brew install wireguard-tools
+2024-06-23 11:30:16,657 [ERROR] Warning: wireguard-tools 1.0.20210914_1 is already installed and up-to-date.
+To reinstall 1.0.20210914_1, run:
+  brew reinstall wireguard-tools
+2024-06-23 11:30:16,658 [INFO] Running command: brew install tinyproxy
+2024-06-23 11:30:18,296 [ERROR] Warning: tinyproxy 1.11.2 is already installed and up-to-date.
+To reinstall 1.11.2, run:
+  brew reinstall tinyproxy
+2024-06-23 11:30:18,296 [INFO] Running command: brew install python@3.9
+2024-06-23 11:30:19,846 [ERROR] Warning: python@3.9 3.9.19 is already installed and up-to-date.
+To reinstall 3.9.19, run:
+  brew reinstall python@3.9
+2024-06-23 11:30:19,847 [INFO] Running command: pip3 install requests
+2024-06-23 11:30:21,794 [INFO] Requirement already satisfied: requests in /Users/anshulasati/anaconda3/lib/python3.11/site-packages (2.31.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /Users/anshulasati/anaconda3/lib/python3.11/site-packages (from requests) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in /Users/anshulasati/anaconda3/lib/python3.11/site-packages (from requests) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /Users/anshulasati/anaconda3/lib/python3.11/site-packages (from requests) (1.26.16)
+Requirement already satisfied: certifi>=2017.4.17 in /Users/anshulasati/anaconda3/lib/python3.11/site-packages (from requests) (2023.7.22)
+2024-06-23 11:30:21,794 [INFO] Dependencies installed.
+2024-06-23 11:30:21,794 [INFO] Retrieving VPN IP address...
+2024-06-23 11:30:21,800 [INFO] VPN IP address: 172.20.10.4
+2024-06-23 11:30:21,800 [INFO] VPN IP address retrieved: 172.20.10.4
+2024-06-23 11:30:21,800 [INFO] Configuring TinyProxy...
+2024-06-23 11:30:21,800 [INFO] Running command: sudo brew services stop tinyproxy
+2024-06-23 11:30:36,607 [INFO] Stopping `tinyproxy`... (might take a while)
+==> Successfully stopped `tinyproxy` (label: homebrew.mxcl.tinyproxy)
+2024-06-23 11:30:36,609 [INFO] Running command: sudo brew services start tinyproxy
+2024-06-23 11:30:37,780 [INFO] ==> Successfully started `tinyproxy` (label: homebrew.mxcl.tinyproxy)
+2024-06-23 11:30:37,780 [ERROR] Warning: Taking root:admin ownership of some tinyproxy paths:
+  /opt/homebrew/Cellar/tinyproxy/1.11.2/bin
+  /opt/homebrew/Cellar/tinyproxy/1.11.2/bin/tinyproxy
+  /opt/homebrew/opt/tinyproxy
+  /opt/homebrew/opt/tinyproxy/bin
+  /opt/homebrew/var/homebrew/linked/tinyproxy
+This will require manual removal of these paths using `sudo rm` on
+brew upgrade/reinstall/uninstall.
+Warning: tinyproxy must be run as non-root to start at user login!
+2024-06-23 11:30:37,780 [INFO] TinyProxy configured to listen on VPN IP: 172.20.10.4
+2024-06-23 11:30:37,781 [INFO] TinyProxy configured.
+2024-06-23 11:30:37,781 [INFO] Starting proxy server...
+2024-06-23 11:30:37,782 [INFO] Proxy server started.
+2024-06-23 11:30:37,782 [INFO] Registering with API...
+2024-06-23 11:30:37,782 [DEBUG] Sending registration request to http://0.0.0.0:8001/register
+2024-06-23 11:30:37,784 [INFO] Starting proxy server on 172.20.10.4:9888
+2024-06-23 11:30:37,801 [DEBUG] Starting new HTTP connection (1): 0.0.0.0:8001
+2024-06-23 11:30:37,844 [DEBUG] http://0.0.0.0:8001 "POST /register HTTP/1.1" 200 222
+2024-06-23 11:30:37,845 [DEBUG] Request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '63', 'Content-Type': 'application/json'}
+2024-06-23 11:30:37,845 [DEBUG] Request body: b'{"geo_location": "RemoteLocation", "internet_speed": "100Mbps"}'
+2024-06-23 11:30:37,845 [DEBUG] Response status code: 200
+2024-06-23 11:30:37,845 [DEBUG] Response headers: {'date': 'Sun, 23 Jun 2024 06:00:37 GMT', 'server': 'uvicorn', 'content-length': '222', 'content-type': 'application/json'}
+2024-06-23 11:30:37,845 [DEBUG] Response text: {"client_id":"65d7088c-3042-4173-ab93-fa3e5c9a606a","ip_address":"192.168.65.1","geo_location":"RemoteLocation","internet_speed":"100Mbps","proxy_port":8080,"wireguard_token":"EEDMJ6ABid/Zo3JRW51t0GiHrer321z9ZiFyxekU1Ww="}
+2024-06-23 11:30:37,845 [INFO] Registered with client ID: 65d7088c-3042-4173-ab93-fa3e5c9a606a
+2024-06-23 11:30:37,846 [INFO] Registered with API.
+2024-06-23 11:30:37,846 [INFO] Starting VPN...
+2024-06-23 11:30:37,846 [DEBUG] Starting VPN for client ID 65d7088c-3042-4173-ab93-fa3e5c9a606a
+2024-06-23 11:30:37,847 [DEBUG] Starting new HTTP connection (1): 0.0.0.0:8001
+2024-06-23 11:30:37,883 [DEBUG] http://0.0.0.0:8001 "POST /start_vpn/65d7088c-3042-4173-ab93-fa3e5c9a606a HTTP/1.1" 500 32
+2024-06-23 11:30:37,899 [DEBUG] Request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'}
+2024-06-23 11:30:37,899 [DEBUG] Request body: None
+2024-06-23 11:30:37,900 [DEBUG] Response status code: 500
+2024-06-23 11:30:37,900 [DEBUG] Response headers: {'date': 'Sun, 23 Jun 2024 06:00:37 GMT', 'server': 'uvicorn', 'content-length': '32', 'content-type': 'application/json'}
+2024-06-23 11:30:37,900 [DEBUG] Response text: {"detail":"Failed to start VPN"}
+2024-06-23 11:30:37,900 [ERROR] Failed to set up VPN client: 500 Server Error: Internal Server Error for url: http://0.0.0.0:8001/start_vpn/65d7088c-3042-4173-ab93-fa3e5c9a606a
